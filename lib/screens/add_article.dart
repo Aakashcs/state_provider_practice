@@ -58,13 +58,13 @@ class _AddArticleScreenState extends State<AddArticleScreen> {
                     ),
                     SizedBox(height: 20),
                     ElevatedButton(
-                      onPressed: () {
+                      onPressed: () async {
                         final article = Article(
                             id: 0,
-                            userId: 100,
+                            userId: 1,
                             title: _titleController.text,
                             body: _bodyController.text);
-                        articleProvider.addArticle(article);
+                        await articleProvider.addArticle(article);
                         Navigator.pop(context);
                       },
                       child: Text("Add"),

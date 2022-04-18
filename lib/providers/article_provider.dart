@@ -58,6 +58,7 @@ class ArticleProvider with ChangeNotifier {
         encoding: Encoding.getByName('utf-8'),
       );
       if (response.statusCode == 201) {
+        log(response.body);
         return true;
       } else {
         Toast.show("Error", duration: 2, backgroundColor: Colors.redAccent);

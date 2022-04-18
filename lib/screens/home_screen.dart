@@ -35,7 +35,10 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Colors.white,
             ),
             onPressed: () {
-              Navigator.pushNamed(context, "/add");
+              Navigator.pushNamed(context, "/add").then((value) {
+                articleProvider.articles.clear();
+                articleProvider.getArticles();
+              });
             },
           )
         ],
